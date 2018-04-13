@@ -19,7 +19,7 @@ AFRAME.registerComponent('arpet', {
     let raycaster = document.querySelector('[ar-raycaster]');
     let mark = document.querySelector('a-intersection-marker');
 
-    raycaster.addEventListener('click', function () {
+    raycaster.addEventListener('click', () => {
       this.el.setAttribute('position', mark.getAttribute('position'));
       this.el.setAttribute('visible', true);
     });
