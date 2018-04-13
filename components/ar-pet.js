@@ -46,6 +46,7 @@ AFRAME.registerPrimitive('a-ar-pet', {
     arpet: {}
   },
   mappings: {
+    animation: 'arpet.animation',
     petposition: 'arpet.petposition',
     petrotation: 'arpet.petrotation',
     petscale: 'arpet.petscale',
