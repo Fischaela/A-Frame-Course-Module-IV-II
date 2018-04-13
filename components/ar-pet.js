@@ -30,7 +30,7 @@ AFRAME.registerComponent('arpet', {
     this.el.appendChild(shadow);
 
     let raycaster = document.querySelector('[ar-raycaster]');
-    let mark = document.querySelector('a-intersection-marker');
+    let mark = document.querySelector('a-intersection-marker a-sphere');
 
     raycaster.addEventListener('click', () => {
       console.log('Cick', mark.getAttribute('position'))
