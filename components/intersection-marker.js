@@ -9,13 +9,13 @@ AFRAME.registerComponent('intersectionmarker', {
 
     let raycaster = document.querySelector('[ar-raycaster]');
 
-    raycaster.addEventListener('raycaster-intersection', function(e) {
+    raycaster.addEventListener('raycaster-intersection', function (e) {
       mark.setAttribute('position', e.detail.intersections[0].point);
       mark.setAttribute('color', 'lightseagreen');
       mark.setAttribute('visible', true);
     });
 
-    raycaster.addEventListener('raycaster-intersection-cleared', function(e) {
+    raycaster.addEventListener('raycaster-intersection-cleared', function (e) {
       mark.setAttribute('color', 'tomato');
     });
   }
