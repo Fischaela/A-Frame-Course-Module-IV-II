@@ -18,7 +18,6 @@ AFRAME.registerComponent('arpet', {
     this.el.appendChild(model);
 
     let shadow = document.createElement('a-plane');
-    shadow.setAttribute('id', 'shadow');
     shadow.setAttribute('width', '2');
     shadow.setAttribute('height', '2');
     shadow.setAttribute('position', this.data.position);
