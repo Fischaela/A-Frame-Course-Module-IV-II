@@ -6,7 +6,7 @@ AFRAME.registerComponent('arpet', {
     petscale: { type: 'vec3', default: '1 1 1' }
   },
   init: function () {
-    this.el.setAttribute('visible', true);
+    this.el.setAttribute('visible', false);
 
     let model = document.createElement('a-gltf-model');
     model.setAttribute('src', '#' + this.data.modelid);
@@ -33,6 +33,7 @@ AFRAME.registerComponent('arpet', {
     let mark = document.querySelector('a-intersection-marker');
 
     raycaster.addEventListener('click', () => {
+      console.log('Cick', mark.getAttribute('position'))
       this.el.setAttribute('position', mark.getAttribute('position'));
       this.el.setAttribute('visible', true);
     });
