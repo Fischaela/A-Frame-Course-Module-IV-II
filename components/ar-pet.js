@@ -15,7 +15,7 @@ AFRAME.registerComponent('arpet', {
     model.setAttribute('rotation', this.data.petrotation);
     model.setAttribute('position', this.data.petposition);
     model.setAttribute('shadow', 'receive: false; cast: true;');
-    model.setAttribute('animation-mixer', 'clip: ' + this.data.petanimation);
+    model.setAttribute('animation-mixer', 'clip: ' + this.data.animation);
 
     this.el.appendChild(model);
 
