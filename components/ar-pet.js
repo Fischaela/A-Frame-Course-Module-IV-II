@@ -29,11 +29,11 @@ AFRAME.registerComponent('arpet', {
 
     let raycaster = document.querySelector('[ar-raycaster]');
     let mark = document.querySelector('a-intersection-marker a-sphere');
-    const { stringify } = AFRAME.utils.coordinates;
+    let { stringify } = AFRAME.utils.coordinates;
 
     raycaster.addEventListener('click', () => {
-      const targetPosition = raycaster.components.cursor.intersection.point;
-      this.el.setAttribute('position', stringify(targetPosition));
+      let position = raycaster.components.cursor.intersection.point;
+      this.el.setAttribute('position', stringify(position));
       this.el.setAttribute('visible', true);
     });
   }
