@@ -6,7 +6,7 @@ AFRAME.registerComponent('arpet', {
     petscale: { type: 'vec3' }
   },
   init: function () {
-    this.el.setAttribute('visibility', false);
+    this.el.setAttribute('visible', false);
 
     let model = document.createElement('a-gltf-model');
     model.setAttribute('src', '#' + this.data.modelid);
