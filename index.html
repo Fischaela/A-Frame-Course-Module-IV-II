@@ -5,9 +5,14 @@
     <title>A-Frame AR ARCore ARKit</title>
     <meta name="description" content="An Augmented Reality for ARCore and ARKit app built with A-Frame.">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+    <script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
+    <script src="components/intersection-marker.js"></script>
   </head>
   <body>
-    <a-scene>
+    <a-scene ar>
+      <a-intersection-marker></a-intersection-marker>
+      <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
     </a-scene>
   </body>
 </html>
