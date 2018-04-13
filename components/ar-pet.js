@@ -1,5 +1,6 @@
 AFRAME.registerComponent('arpet', {
   schema: {
+    animation: { type: 'string', default: 'idle' },
     modelid: { type: 'string', default: 'pet' },
     petposition: { type: 'vec3' },
     petrotation: { type: 'vec3' },
@@ -14,6 +15,7 @@ AFRAME.registerComponent('arpet', {
     model.setAttribute('rotation', this.data.petrotation);
     model.setAttribute('position', this.data.petposition);
     model.setAttribute('shadow', 'receive: false; cast: true;');
+    model.setAttribute('animation-mixer', 'clip: ' + this.data.arpetanimation);
 
     this.el.appendChild(model);
 
