@@ -6,7 +6,7 @@ AFRAME.registerComponent('arpet', {
     petscale: { type: 'vec3', default: '1 1 1' }
   },
   init: function () {
-    this.el.setAttribute('visible', false);
+    this.el.setAttribute('visible', true);
 
     let model = document.createElement('a-gltf-model');
     model.setAttribute('src', '#' + this.data.modelid);
@@ -23,18 +23,18 @@ AFRAME.registerComponent('arpet', {
     shadow.setAttribute('height', '2');
     shadow.setAttribute('position', this.data.position);
     shadow.setAttribute('rotation', '-90 0 0');
-    shadow.setAttribute('color', 'white');
     shadow.setAttribute('shadow', 'receive: true');
-    shadow.setAttribute('shadow-material');
+    shadow.setAttribute('shadow-material', true);
 
     this.el.appendChild(shadow);
 
     let raycaster = document.querySelector('[ar-raycaster]');
     let mark = document.querySelector('a-intersection-marker a-sphere');
+    const { stringify } = AFRAME.utils.coordinates;
 
     raycaster.addEventListener('click', () => {
-      console.log('Cick', mark.getAttribute('position'))
-      this.el.setAttribute('position', mark.getAttribute('position'));
+      const targetPosition = raycaster.components.cursor.intersection.point;
+      this.el.setAttribute('position', stringify(targetPosition));
       this.el.setAttribute('visible', true);
     });
   }
