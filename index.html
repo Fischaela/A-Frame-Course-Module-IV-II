@@ -8,10 +8,12 @@
     <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
     <script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
     <script src="components/intersection-marker.js"></script>
+    <script src="components/ar-pet.js"></script>
   </head>
   <body>
     <a-scene ar>
       <a-intersection-marker></a-intersection-marker>
+      <a-ar-pet></a-ar-pet>
       <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
     </a-scene>
   </body>
