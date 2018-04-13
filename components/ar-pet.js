@@ -1,9 +1,9 @@
 AFRAME.registerComponent('arpet', {
   schema: {
-    modelid: { type: 'string', default: '#pet' },
+    modelid: { type: 'string', default: 'pet' },
     petposition: { type: 'vec3' },
     petrotation: { type: 'vec3' },
-    petscale: { type: 'vec3' }
+    petscale: { type: 'vec3', default: '1 1 1' }
   },
   init: function () {
     this.el.setAttribute('visible', false);
