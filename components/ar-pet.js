@@ -44,7 +44,7 @@ AFRAME.registerComponent('arpet', {
     recognition.lang = 'en-US';
     recognition.onresult = function (e) {
       recognition.start();
-      let result = event.results[0][0].transcript;
+      let result = e.results[0][0].transcript;
       let animations = {
         'Sit': 'sits',
         'Jump': 'jumpUp'
