@@ -31,9 +31,9 @@ AFRAME.registerPrimitive('a-ar-pet', {
     arpet: {}
   },
   mappings: {
-    arpetposition: 'arpet.petposition',
-    arpetrotation: 'arpet.petrotation',
-    arpetscale: 'arpet.petscale',
+    petposition: 'arpet.petposition',
+    petrotation: 'arpet.petrotation',
+    petscale: 'arpet.petscale',
     modelid: 'arpet.modelid'
   }
 });
