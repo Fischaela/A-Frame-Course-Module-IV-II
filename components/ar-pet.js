@@ -38,6 +38,26 @@ AFRAME.registerComponent('arpet', {
       this.el.setAttribute('position', stringify(position));
       this.el.setAttribute('visible', true);
     });
+
+    let recognition = new webkitSpeechRecognition();
+    recognition.contiuous = true;
+    recognition.lang = 'en-US';
+    recognition.onresult = function (e) {
+      recognition.start();
+      let result = event.results[0][0].transcript;
+      let animations = {
+        'Sit': 'sits',
+        'Jump': 'jumpUp'
+      };
+      for (let key of Object.keys(animations)) {
+        if (result.toLowerCase().includes(key.toLowerCase())) {
+          model.setAttribute('animation-mixer', 'clip: ' + animations[key]);
+          return;
+        }
+      }
+    }
+    recognition.onerror = function () {}
+    recognition.start();
   }
 });
 
